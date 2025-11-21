@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Matrix Multiplication Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Matrix Multiplication Visualizer</h1>
+
+  <div class="card">
+    <h3>Pilih Saiz Matriks</h3>
+    <div>
+      Matriks A:
+      <select id="a_rows"><option>1</option><option>2</option><option>3</option><option>4</option></select> x
+      <select id="a_cols"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+    </div>
+    <div>
+      Matriks B:
+      <select id="b_rows"><option>1</option><option>2</option><option>3</option><option>4</option></select> x
+      <select id="b_cols"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+    </div>
+
+    <p id="validityMsg" class="warning"></p>
+
+    <button onclick="generateMatrices()">Jana Matriks</button>
+  </div>
+
+  <div id="matrixContainer"></div>
+
+  <button id="goBtn" onclick="startAnimation()" style="display:none">GO</button>
+
+  <div id="animationArea">
+      <div id="car">🚗</div>
+      <div id="lamp">🚦</div>
+      <div id="highlightBox"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

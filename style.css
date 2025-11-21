@@ -1,0 +1,55 @@
+body{
+  background:#0f172a;
+  color:white;
+  font-family:Arial;
+  padding:20px;
+}
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+.matrix-grid{
+  display:grid;
+  gap:6px;
+  margin-top:12px;
+}
+.matrix-grid input{
+  width:55px;
+  text-align:center;
+}
+.warning{
+  color:#f87171;
+  font-weight:bold;
+}
+#animationArea{
+  position:relative;
+  height:150px;
+  margin-top:40px;
+  border-top:1px solid #334155;
+  padding-top:20px;
+}
+#car{
+  position:absolute;
+  left:0;
+  top:60px;
+  font-size:40px;
+  transition:all 2s linear;
+}
+#lamp{
+  position:absolute;
+  right:0;
+  top:20px;
+  font-size:50px;
+  transition:all 1s ease-out;
+}
+#lamp.fall{
+  transform:rotateZ(80deg) translateY(40px);
+}
+#highlightBox{
+  margin-top:20px;
+  font-size:24px;
+  text-align:center;
+  height:40px;
+}
