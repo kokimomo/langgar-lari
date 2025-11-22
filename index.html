@@ -1,41 +1,74 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <title>Matrix Multiplication Visualizer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Langgar-Lari — Visual Pendaraban Matriks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Matrix Multiplication Visualizer</h1>
-
-  <div class="card">
-    <h3>Pilih Saiz Matriks</h3>
-    <div>
-      Matriks A:
-      <select id="a_rows"><option>1</option><option>2</option><option>3</option><option>4</option></select> x
-      <select id="a_cols"><option>1</option><option>2</option><option>3</option><option>4</option></select>
-    </div>
-    <div>
-      Matriks B:
-      <select id="b_rows"><option>1</option><option>2</option><option>3</option><option>4</option></select> x
-      <select id="b_cols"><option>1</option><option>2</option><option>3</option><option>4</option></select>
-    </div>
-
-    <p id="validityMsg" class="warning"></p>
-
-    <button onclick="generateMatrices()">Jana Matriks</button>
-  </div>
-
-  <div id="matrixContainer"></div>
-
-  <button id="goBtn" onclick="startAnimation()" style="display:none">GO</button>
-
-  <div id="animationArea">
-      <div id="car">🚗</div>
-      <div id="lamp">🚦</div>
-      <div id="highlightBox"></div>
-  </div>
-
+  <main class="app">
+    <header>
+      <h1>Langgar-Lari — Visual Pendaraban Matriks</h1>
+      <p class="lead">Pilih saiz matriks A (m×n) dan B (n×p), isi unsur, tekan <strong>JANA</strong> kemudian <strong>GO</strong>.</p>
+    </header>
+    <section class="controls card">
+      <div class="row">
+        <label>Baris A (m)
+          <select id="rowsA"></select>
+        </label>
+        <label>Kolum A / Baris B (n)
+          <select id="colsA"></select>
+        </label>
+        <label>Kolum B (p)
+          <select id="colsB"></select>
+        </label>
+        <button id="genBtn">JANA</button>
+      </div>
+      <div class="row">
+        <button id="goBtn" class="primary" disabled>GO</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <p id="validity" class="muted"></p>
+    </section>
+    <section class="matrices">
+      <div class="matrix-card card">
+        <h3>Matrix A (m×n)</h3>
+        <div id="matrixA" class="matrix"></div>
+      </div>
+      <div class="matrix-card card">
+        <h3>Matrix B (n×p)</h3>
+        <div id="matrixB" class="matrix"></div>
+      </div>
+      <div class="matrix-card card">
+        <h3>Hasil C (m×p)</h3>
+        <div id="matrixC" class="matrix result"></div>
+      </div>
+    </section>
+    <section class="arena card" id="arena">
+      <h3>Arena Animasi — Kereta (baris) ↔ Tiang (lajur)</h3>
+      <div id="animationArea" class="animation-area">
+        <div id="carsColumn" class="side-col cars-col"></div>
+        <div id="centerStage" class="center-stage">
+          <div id="stackLeft" class="stack stack-left"></div>
+          <div id="collisionStage" class="collision-stage">
+            <div id="valueLeft" class="value-box big"></div>
+            <div id="plusSign">+</div>
+            <div id="valueRight" class="value-box big"></div>
+            <div id="equalsSign">=</div>
+            <div id="valueResult" class="value-box big result"></div>
+          </div>
+          <div id="stackRight" class="stack stack-right"></div>
+        </div>
+        <div id="lampsColumn" class="side-col lamps-col"></div>
+        <div id="opBox" class="op-box"></div>
+      </div>
+      <div id="ticker" class="ticker"></div>
+    </section>
+    <footer>
+      <small>Upload ketiga-tiga fail ini di root repo untuk GitHub Pages.</small>
+    </footer>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
